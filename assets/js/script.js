@@ -63,6 +63,7 @@ var startBtn = document.getElementById('start-btn');
 //Question element
 var questionsDiv = document.getElementById('questions');
 var questionTxt = document.getElementById('question-txt');
+var choicesDiv = document.getElementById('choices');
 var choiceA = document.getElementById('btn1');
 var choiceB = document.getElementById('btn2');
 var choiceC = document.getElementById('btn3');
@@ -76,7 +77,7 @@ var initalInput = document.getElementById('initials');
 
 var scoresDiv =document.getElementById('scores');
 var reset = document.getElementById('reset-btn');
-var clearHighScores = document.getElementById('clear-high-score-btn');
+var clearHighScores = document.getElementById('clear-score-btn');
 var highScore = document.getElementById('high-scores');
 var highScoresList = document.getElementById('high-score-list');
 var finalScore = document.getElementById("finalScore");
@@ -99,6 +100,7 @@ timeLeft.textContent = totalTime;
 
 startDiv.style.display = "none";
 questionsDiv.style.display = "block";
+choicesDiv.style.display = "block";
 timer.style.display = "block";
 timesUp.style.display = "none";
 summary.style.display = "none";
@@ -256,7 +258,7 @@ function showHighScores(){
     var storedHighScores = JSON.parse(savedHighScores);
 
     for (; i < storedHighScores.length; i++) {
-        var eachNewScore = document.createElement("p");
+        var eachNewScore = document.createElement('p');
         eachNewScore.innerHTML = storedHighScores[i].initials + ":" + storedHighScores[i].score;
         storedHighScores.appendChild(eachNewScore);
     }

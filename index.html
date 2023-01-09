@@ -16,17 +16,20 @@
         <header>
           <div class="title">
             <h1>Code Quiz!</h1>
+            <p id="instructions">You will have 60 seconds to answer the questions in this quiz and build your score! But be carefull as each incorrect answer will deduct a point from your score and 5 seconds from the clock!</p>
             <div  id="start">
               <button id="start-btn">Start Quiz</button>
             </div>
           </div>
 
-          <div class="questions" id="questions"> </div>
-            <p id="question-txt" ></p>
+          <div class="questions" id="questions" style="display: none;"> </div>
+            <p id="question-txt"></p>
+          <div id="choices">
             <p> <button id="btn1"></button></p>
             <p> <button id="btn2"></button></p>
             <p> <button id="btn3"></button></p>
             <p> <button id="btn4"></button></p>
+          </div>
             <hr id="lineBreak">
             <p id="correct-answer"></p>
           </div>
