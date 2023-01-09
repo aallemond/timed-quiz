@@ -93,13 +93,15 @@ function newQuiz() {
 questionIndex = 0;
 totalTime = 60;
 timeLeft.textContent = totalTime;
-initalInput.textContent = "";
+
 
 
 startDiv.style.display = "none";
 questionDiv.style.display = "block";
 timer.style.display = "block";
 timesUp.style.display = "none";
+
+
 
 var startTimer = setInterval(function() {
     totalTime --;
@@ -193,11 +195,6 @@ finalScore.textContent =correctAns;
 function storeHighScore (event) {
     event.preventDefault();
 
-    if (initalInput.value == ""){
-        alert("Please enter your initials");
-        return;
-    }
-
     startDiv.style.display = 'none';
     timer.style.display = 'none';
     timesUp.style.display = 'none';
@@ -266,7 +263,5 @@ submitInitialBtn.addEventListener("click", function(event){
     storeHighScore(event);
 });
 
-viewHighScore.addEventListener("click", function(event){
-    showHighScores(event);
-});
+
 
