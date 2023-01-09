@@ -1,4 +1,11 @@
-.questions{
-    display:none
+#questions-txt{
+    display: none;
+}
 
+#summary{
+    display: none;
+}
+
+#timesUp{
+    display: none;
 }

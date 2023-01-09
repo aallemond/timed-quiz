@@ -10,18 +10,19 @@
   <body>
     <main>
 
-      <div  id="start">
-        <button id="start-btn">Start Quiz</button>
-      </div>
+    
 
       <div class="quiz-title" >
         <header>
           <div class="title">
             <h1>Code Quiz!</h1>
+            <div  id="start">
+              <button id="start-btn">Start Quiz</button>
+            </div>
           </div>
 
-          <div class="questions" id="questions"></div>
-            <p id="question-txt"></p>
+          <div class="questions" id="questions"> </div>
+            <p id="question-txt" ></p>
             <p> <button id="btn1"></button></p>
             <p> <button id="btn2"></button></p>
             <p> <button id="btn3"></button></p>
@@ -34,7 +35,7 @@
             <div class="time-left" id="time-left"></div>
             <div class="seconds">Time: 60</div>
           </div>
-          <div id="times-up">Time's Up!</div>
+          <div id="times-up" style="display: none;">Time's Up!</div>
         </header>
 
       </div>
@@ -55,7 +56,7 @@
         <div id="high-score-list"></div>
 
         <p>
-          <button type="submit" id="go-back-btn">Go Back</button>
+          <button type="submit" id="reset-btn">Reset</button>
           <button type="submit" id="clear-score-btn">Clear High Scores</button>
         </p>
       </div>

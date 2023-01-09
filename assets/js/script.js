@@ -61,7 +61,7 @@ var startDiv = document.getElementById('start');
 var startBtn = document.getElementById('start-btn');
 
 //Question element
-var questionDiv = document.getElementById('questions');
+var questionsDiv = document.getElementById('questions');
 var questionTxt = document.getElementById('question-txt');
 var choiceA = document.getElementById('btn1');
 var choiceB = document.getElementById('btn2');
@@ -75,9 +75,9 @@ var submitInitialBtn = document.getElementById('submit-initials-btn');
 var initalInput = document.getElementById('initials');
 
 var scoresDiv =document.getElementById('scores');
-var goBack = document.getElementById('go-back-btn');
+var reset = document.getElementById('reset-btn');
 var clearHighScores = document.getElementById('clear-high-score-btn');
-var viewHighScore = document.getElementById('high-scores');
+var highScore = document.getElementById('high-scores');
 var highScoresList = document.getElementById('high-score-list');
 var finalScore = document.getElementById("finalScore");
 
@@ -98,7 +98,7 @@ timeLeft.textContent = totalTime;
 
 
 startDiv.style.display = "none";
-questionDiv.style.display = "block";
+questionsDiv.style.display = "block";
 timer.style.display = "block";
 timesUp.style.display = "none";
 summary.style.display = "none";
@@ -110,6 +110,7 @@ var startTimer = setInterval(function() {
     timeLeft.textContent = totalTime;
     if(totalTime <= 0) {
         clearInterval(startTimer);
+        gameOver();
         if (questionIndex < questions.length - 1){
             gameOver();
         }
@@ -189,7 +190,7 @@ function chooseD() { checkAnswer(3);}
 
 function gameOver() {
     summary.style.display ='block';
-    questionDiv.style.display = 'none';
+    questionsDiv.style.display = 'none';
     startDiv.style.display = 'none';
     timer.style.display = 'none';
     timesUp.style.display = 'block';
@@ -207,7 +208,7 @@ function storeHighScore (event) {
     startDiv.style.display = 'none';
     timer.style.display = 'none';
     timesUp.style.display = 'none';
-    summary.style.display = 'none';
+    summary.style.display = 'block';
     highScoresList.style.display = 'block';
 
     //Store high scores in local storage
@@ -239,9 +240,9 @@ var i =0;
 function showHighScores(){
     startDiv.style.display ='none';
     timer.style.display = 'none';
-    questionDiv.style.display = 'none';
+    questionsDiv.style.display = 'none';
     timesUp.style.display = 'none';
-    summary.style.display = 'none';
+    summary.style.display = 'block';
     highScoresList.style.display = 'block';
 
     var savedHighScores = localStorage.getItem("high scores");
@@ -257,7 +258,7 @@ function showHighScores(){
     for (; i < storedHighScores.length; i++) {
         var eachNewScore = document.createElement("p");
         eachNewScore.innerHTML = storedHighScores[i].initials + ":" + storedHighScores[i].score;
-        listOfHighScores.appendChild(eachNewScore);
+        storedHighScores.appendChild(eachNewScore);
     }
 }
 
@@ -272,10 +273,18 @@ submitInitialBtn.addEventListener("click", function(event){
     storeHighScore(event);
 });
 
-goBack.addEventListener("click", function(){
+reset.addEventListener("click", function(){
     startDiv.style.display = "block";
     highScoresList.style.display = "none";
+    summary.style.display = "none";
 
 });
+
+clearHighScores.addEventListener("click", function(){
+    window.localStorage.removeItem("high scores")
+
+});
+
+
 
 
