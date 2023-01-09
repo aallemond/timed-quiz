@@ -133,7 +133,7 @@ function nextQuestion(){
     choiceC.textContent = questions[questionIndex].choices[2];
     choiceD.textContent = questions[questionIndex].choices[3];
 
-    questionIndex++;
+   
     
 }
 
@@ -145,13 +145,13 @@ function checkAnswer(answer){
     lineBreak.style.display ="block";
     answerCheck.style.display ="block";
    
-    if(questions[questionIndex].answer === questions[questionIndex].choices[answer]){;
+    if(questions[questionIndex].answer === questions[questionIndex].choices[answer]){
 
     
     //Add to score if correct answer
-
+    questionIndex++;
     correctAns++;
-    answerCheck.textContent = "Correct";
+    answerCheck.textContent = "Correct!";
 
     nextQuestion();
 
@@ -172,6 +172,7 @@ function checkAnswer(answer){
 if (questionIndex < questions.length) {
     nextQuestion();
 } else {
+
     gameOver();
 }
 
