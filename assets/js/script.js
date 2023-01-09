@@ -74,6 +74,7 @@ var summary = document.getElementById('summary');
 var submitInitialBtn = document.getElementById('submit-initials-btn');
 var initalInput = document.getElementById('initials');
 
+var scoresDiv =document.getElementById('scores');
 var goBack = document.getElementById('go-back-btn');
 var clearHighScores = document.getElementById('clear-high-score-btn');
 var viewHighScore = document.getElementById('high-scores');
@@ -100,6 +101,7 @@ startDiv.style.display = "none";
 questionDiv.style.display = "block";
 timer.style.display = "block";
 timesUp.style.display = "none";
+summary.style.display = "none";
 
 
 
@@ -130,6 +132,8 @@ function nextQuestion(){
     choiceB.textContent = questions[questionIndex].choices[1];
     choiceC.textContent = questions[questionIndex].choices[2];
     choiceD.textContent = questions[questionIndex].choices[3];
+
+    questionIndex++;
     
 }
 
@@ -149,6 +153,8 @@ function checkAnswer(answer){
     correctAns++;
     answerCheck.textContent = "Correct";
 
+    nextQuestion();
+
     //If wrong answer
 
 
@@ -157,11 +163,12 @@ function checkAnswer(answer){
     timeLeft.textContent = totalTime;
     answerCheck.textContent = 'Wrong! The correct answer was:' + questions[questionIndex].answer;
 
+    nextQuestion();
 }
 };
 
 
-questionIndex++;
+
 if (questionIndex < questions.length) {
     nextQuestion();
 } else {
@@ -263,5 +270,10 @@ submitInitialBtn.addEventListener("click", function(event){
     storeHighScore(event);
 });
 
+goBack.addEventListener("click", function(){
+    startDiv.style.display = "block";
+    highScoresList.style.display = "none";
+
+});
 
 
