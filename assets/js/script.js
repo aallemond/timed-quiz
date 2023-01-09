@@ -161,14 +161,14 @@ function checkAnswer(answer){
 }  else {
     totalTime -= 5;
     timeLeft.textContent = totalTime;
-    answerCheck.textContent = 'Wrong! The correct answer was:' + questions[questionIndex].answer;
+    answerCheck.textContent = 'Wrong! The correct answer was: ' + questions[questionIndex].answer;
 
     nextQuestion();
 }
 };
 
 
-
+//Ends the quiz if all questions are answered
 if (questionIndex < questions.length) {
     nextQuestion();
 } else {
