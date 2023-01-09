@@ -4,7 +4,7 @@
 
 This application is a timed quiz covering several topics of JavaScript. 
 
-![Screenshot of Application](./assets/images/Screenshot%202023-01-09%20at%203.35.10%20PM.png)
+![Screenshot of Application](./assets/images/Screenshot%202023-01-09%20at%203.38.10%20PM.png)
 [Click here to visit the page](https://aallemond.github.io/timed-quiz/)
 
 
