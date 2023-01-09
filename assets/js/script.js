@@ -27,7 +27,7 @@ var questions = [{
 {
     question: "The 'unshift' method does what?",
     choices: ["a. adds an object to the end of an array", "b. changes to lowercase lettering", "c. adds an object to the beginning of an array", "d. deletes an array"],
-    answer: "c. adds an objeect to the beginning of an array"
+    answer: "c. adds an object to the beginning of an array"
 },
 
 {
@@ -163,6 +163,7 @@ function checkAnswer(answer){
     timeLeft.textContent = totalTime;
     answerCheck.textContent = 'Wrong! The correct answer was: ' + questions[questionIndex].answer;
 
+    questionIndex ++;
     nextQuestion();
 }
 };
