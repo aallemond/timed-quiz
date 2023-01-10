@@ -257,7 +257,7 @@ function showHighScores(){
 
     for (; i < storedHighScores.length; i++) {
         var newScore = document.createElement('p');
-        newScore.innerHTML = storedHighScores[i].initials + ":" + storedHighScores[i].score;
+        newScore.innerHTML = storedHighScores[i].initials + ":" + storedHighScores[i].scores;
         highScoresList.appendChild(newScore);
     }
 }
@@ -282,7 +282,7 @@ reset.addEventListener("click", function(){
 
 clearHighScores.addEventListener("click", function(){
     window.localStorage.removeItem("high scores")
-
+    
 });
 
 
