@@ -279,6 +279,8 @@ reset.addEventListener("click", function(){
     highScoresList.style.display = "none";
     summary.style.display = "none";
     timesUp.style.display = "none";
+    correctAns = 0;
+   
 
 });
 
