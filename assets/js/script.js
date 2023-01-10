@@ -73,7 +73,7 @@ var answerCheck = document.getElementById('correct-answer');
 //Summary element
 var summary = document.getElementById('summary');
 var submitInitialBtn = document.getElementById('submit-initials-btn');
-var initalInput = document.getElementById('initials');
+var initialInput = document.getElementById('initials');
 
 var scoresDiv =document.getElementById('scores');
 var reset = document.getElementById('reset-btn');
@@ -201,7 +201,7 @@ finalScore.textContent =correctAns;
 
 }
 
-//Enter initials for high scores
+//Enter initials for high scores and save in local storage
 function storeHighScore (event) {
     event.preventDefault();
 
@@ -211,7 +211,7 @@ function storeHighScore (event) {
     summary.style.display = 'block';
     highScoresList.style.display = 'block';
 
-    //Store high scores in local storage
+    
     var savedHighScores = localStorage.getItem("high scores");
     var scoresArray;
 
@@ -222,7 +222,7 @@ function storeHighScore (event) {
     }
 
     var userScore = {
-        initials: initalInput.value,
+        initials: initialInput.value,
         scores: finalScore.textContent
     };
 
@@ -256,9 +256,9 @@ function showHighScores(){
     var storedHighScores = JSON.parse(savedHighScores);
 
     for (; i < storedHighScores.length; i++) {
-        var eachNewScore = document.createElement('p');
-        eachNewScore.innerHTML = storedHighScores[i].initials + ":" + storedHighScores[i].score;
-        storedHighScores.appendChild(eachNewScore);
+        var newScore = document.createElement('p');
+        newScore.innerHTML = storedHighScores[i].initials + ":" + storedHighScores[i].score;
+        storedHighScores.appendChild(newScore);
     }
 }
 
