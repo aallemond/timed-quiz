@@ -50,7 +50,7 @@ var questions = [{
 ];
 
 //Defining variables for HTML elements
-
+var intrusctions = document.getElementById('instructions')
 //Timer
 var timer = document.getElementById('timer');
 var timeLeft = document.getElementById("time-left");
@@ -97,7 +97,7 @@ totalTime = 60;
 timeLeft.textContent = totalTime;
 
 
-
+instructions.style.display = "none";
 startDiv.style.display = "none";
 questionsDiv.style.display = "block";
 choicesDiv.style.display = "block";
@@ -274,9 +274,11 @@ submitInitialBtn.addEventListener("click", function(event){
 });
 
 reset.addEventListener("click", function(){
+    instructions.style.display = "block";
     startDiv.style.display = "block";
     highScoresList.style.display = "none";
     summary.style.display = "none";
+    timesUp.style.display = "none";
 
 });
 
