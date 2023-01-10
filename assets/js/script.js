@@ -284,6 +284,7 @@ reset.addEventListener("click", function(){
 
 clearHighScores.addEventListener("click", function(){
     window.localStorage.removeItem("high scores")
+    highScoresList.remove()
     
 });
 
