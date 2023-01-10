@@ -88,7 +88,7 @@ var questionNum = 0;
 var scoreResult;
 var questionIndex = 0;
 
-//Function to start timer on button press
+//Function to start timer and show quiz on button press
 
 var totalTime = 60;
 function newQuiz() {
