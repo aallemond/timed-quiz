@@ -258,7 +258,7 @@ function showHighScores(){
     for (; i < storedHighScores.length; i++) {
         var newScore = document.createElement('p');
         newScore.innerHTML = storedHighScores[i].initials + ":" + storedHighScores[i].score;
-        storedHighScores.appendChild(newScore);
+        highScoresList.appendChild(newScore);
     }
 }
 
