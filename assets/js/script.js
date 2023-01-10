@@ -142,33 +142,31 @@ function nextQuestion(){
 
 //Shows correct answer after player has made their choice
 
-function checkAnswer(answer){
-    
+function checkAnswer(answer){   
     var lineBreak = document.getElementById("lineBreak");
     lineBreak.style.display ="block";
     answerCheck.style.display ="block";
    
     if(questions[questionIndex].answer === questions[questionIndex].choices[answer]){
 
-    
-    //Add to score if correct answer
+        //Add to score if correct answer
+        correctAns++;
+        answerCheck.textContent = "Correct!";
+
+        //If wrong answer
+    }  else {
+        totalTime -= 5;
+        timeLeft.textContent = totalTime;
+        answerCheck.textContent = 'Wrong! The correct answer was: ' + questions[questionIndex].answer;
+    }
+
     questionIndex++;
-    correctAns++;
-    answerCheck.textContent = "Correct!";
 
-    nextQuestion();
-
-    //If wrong answer
-
-
-}  else {
-    totalTime -= 5;
-    timeLeft.textContent = totalTime;
-    answerCheck.textContent = 'Wrong! The correct answer was: ' + questions[questionIndex].answer;
-
-    questionIndex ++;
-    nextQuestion();
-}
+    if(questionIndex === questions.length){
+        gameOver();
+    }else{
+        nextQuestion();
+    }
 };
 
 
